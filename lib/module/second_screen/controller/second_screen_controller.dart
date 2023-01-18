@@ -13,8 +13,6 @@ class SecondScreenController extends GetxController {
 
   @override
   void onReady() {
-    // updatSeletedUser()
-    print(userList);
     super.onReady();
   }
 

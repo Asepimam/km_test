@@ -10,7 +10,6 @@ void main() async {
 
   runApp(
     GetMaterialApp(
-      getPages: getPages,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,

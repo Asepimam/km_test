@@ -3,7 +3,6 @@ import 'package:fhe_template/core.dart';
 import 'package:get/get.dart';
 
 class SecondScreenView extends StatelessWidget {
-  static Map item = {};
   const SecondScreenView({
     Key? key,
   }) : super(key: key);

@@ -37,7 +37,6 @@ class ThridScreenView extends StatelessWidget {
                         return InkWell(
                           onTap: () {
                             secondScreenController.addUserList(item);
-                            print(secondScreenController.userList);
                           },
                           child: Card(
                             child: ListTile(
