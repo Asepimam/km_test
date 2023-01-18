@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fhe_template/core.dart';
 import 'package:get/get.dart';
 
-class ThridScreenView extends StatelessWidget {  
+class ThridScreenView extends StatelessWidget {
   const ThridScreenView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SecondScreenController secondScreenController = Get.find();
     return GetBuilder<ThridScreenController>(
       init: ThridScreenController(),
       builder: (controller) {
@@ -35,10 +36,8 @@ class ThridScreenView extends StatelessWidget {
                         var item = controller.userList[index];
                         return InkWell(
                           onTap: () {
-                            Get.toNamed(
-                              '/second',
-                              arguments: item,
-                            );
+                            secondScreenController.addUserList(item);
+                            print(secondScreenController.userList);
                           },
                           child: Card(
                             child: ListTile(

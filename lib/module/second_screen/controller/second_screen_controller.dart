@@ -14,7 +14,7 @@ class SecondScreenController extends GetxController {
   @override
   void onReady() {
     // updatSeletedUser()
-
+    print(userList);
     super.onReady();
   }
 
@@ -24,8 +24,8 @@ class SecondScreenController extends GetxController {
   }
 
   List userList = [];
-  addList(String name) {
-    userList.add(name);
+  addUserList(item) {
+    userList.add(item);
     update();
   }
 }

@@ -41,8 +41,4 @@ class ThridScreenController extends GetxController {
     userList = obj["data"];
     update();
   }
-  List userClickList = [];
-  void getUserClickList() async {
-    userClickList.add(view!.item);
-  }
 }
