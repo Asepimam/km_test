@@ -1,0 +1,8 @@
+{
+    "openai_key": "",
+    "modules": [
+        "firts_screen",
+        "second_screen",
+        "thrid_screen"
+    ]
+}
