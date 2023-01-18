@@ -16,7 +16,6 @@ class FirtsScreenView extends StatelessWidget {
         controller.view = this;
 
         return Scaffold(
-          
           body: SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
@@ -281,9 +280,7 @@ class FirtsScreenView extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              Get.to(SecondScreenView(
-                                name: controller.username,
-                              ));
+                              Get.to(const SecondScreenView());
                             },
                             child: const Text(
                               "NEXT",
@@ -301,7 +298,6 @@ class FirtsScreenView extends StatelessWidget {
             ),
           ),
         );
-        
       },
     );
   }

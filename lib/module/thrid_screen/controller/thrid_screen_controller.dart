@@ -25,7 +25,9 @@ class ThridScreenController extends GetxController {
 
   List userList = [];
   void getUserList() async {
-    bool data = false;
+    userList.clear();
+    update();
+    Future.delayed(const Duration(seconds: 2));
 
     var response = await Dio().get(
       "https://reqres.in/api/users",
@@ -38,5 +40,9 @@ class ThridScreenController extends GetxController {
     Map obj = response.data;
     userList = obj["data"];
     update();
+  }
+  List userClickList = [];
+  void getUserClickList() async {
+    userClickList.add(view!.item);
   }
 }
