@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import '../controller/firts_screen_controller.dart';
 import 'package:fhe_template/core.dart';
 import 'package:get/get.dart';
 
@@ -103,36 +102,13 @@ class FirtsScreenView extends StatelessWidget {
                           children: [
                             Expanded(
                               flex: 8,
-                              child: Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0),
-                                    width: 310,
-                                    height: 45.0,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(12.0),
-                                      ),
-                                    ),
-                                    child: TextFormField(
-                                      keyboardType: TextInputType.name,
-                                      textInputAction: TextInputAction.next,
-                                      cursorColor: const Color(0xFF6F35A5),
-                                      onChanged: (value) {
-                                        controller.username = value;
-                                      },
-                                      decoration: const InputDecoration(
-                                        hintText: "username",
-                                        border: InputBorder.none,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 15.0),
-                                    child: Container(
+                              child: Form(
+                                key: controller.loginFormKey,
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                child: Column(
+                                  children: [
+                                    Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 15.0),
                                       width: 310,
@@ -148,16 +124,48 @@ class FirtsScreenView extends StatelessWidget {
                                         textInputAction: TextInputAction.next,
                                         cursorColor: const Color(0xFF6F35A5),
                                         onChanged: (value) {
-                                          controller.palidrom = value;
+                                          controller.username = value;
                                         },
+                                        validator: (value) =>
+                                            controller.validatorUsername(value),
                                         decoration: const InputDecoration(
-                                          hintText: "Palindrom",
+                                          hintText: "username",
                                           border: InputBorder.none,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15.0),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 15.0),
+                                        width: 310,
+                                        height: 45.0,
+                                        decoration: const BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(12.0),
+                                          ),
+                                        ),
+                                        child: TextFormField(
+                                          keyboardType: TextInputType.name,
+                                          textInputAction: TextInputAction.next,
+                                          cursorColor: const Color(0xFF6F35A5),
+                                          onChanged: (value) {
+                                            controller.palidrom = value;
+                                          },
+                                          validator: (value) => controller
+                                              .validatorPalindrom(value),
+                                          decoration: const InputDecoration(
+                                            hintText: "Palindrom",
+                                            border: InputBorder.none,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -179,8 +187,8 @@ class FirtsScreenView extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              if (controller.isPalindrom(controller.palidrom) ==
-                                  true) {
+                              if (controller.isPalindrom(controller.palidrom) &&
+                                  controller.palidrom.isNotEmpty) {
                                 Get.dialog(
                                   AlertDialog(
                                     title: Container(
@@ -216,7 +224,42 @@ class FirtsScreenView extends StatelessWidget {
                                     ],
                                   ),
                                 );
-                                //
+                              } else if (controller.palidrom == "") {
+                                Get.dialog(
+                                  AlertDialog(
+                                    title: Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        padding: const EdgeInsets.all(10.0),
+                                        decoration: const BoxDecoration(
+                                          color: Colors.orange,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10.0)),
+                                        ),
+                                        child: const Center(
+                                            child: Text('Message'))),
+                                    content: const Text(
+                                      'IsNotPalindrom',
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                      ),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Get.back();
+                                        },
+                                        child: const Center(
+                                            child: Text(
+                                          'OK',
+                                          style: TextStyle(
+                                            fontSize: 20.0,
+                                          ),
+                                        )),
+                                      ),
+                                    ],
+                                  ),
+                                );
                               } else {
                                 Get.dialog(
                                   AlertDialog(
