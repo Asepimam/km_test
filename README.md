@@ -4,11 +4,11 @@
 
 #**Screen first**
 
-![Screen first](assets\images\Screenshot_2023_0119_191513.jpg)
+![Screenshot_2023_0119_191513](https://user-images.githubusercontent.com/93848587/213461917-dce921bb-b705-41c0-a9c1-e368c9bd2995.jpg)
 
 #**Screen Second**
 
-![Screen first](assets\images\Screenshot_2023_0119_191527.jpg)
+![Screenshot_2023_0119_191527](https://user-images.githubusercontent.com/93848587/213461931-97e2ec71-4603-46f3-be3b-70c9ced78244.jpg)
 
 #**Screen Thrid**
 
