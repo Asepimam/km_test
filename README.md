@@ -1,6 +1,6 @@
 # Test Km
 
-![Screenshot_2023_0119_191436](https://user-images.githubusercontent.com/93848587/213461905-8ef5e924-599a-4ac1-bf4a-49dbb6bf30a8.jpg)
+![Screenshot_2023_0119_191436](https://user-images.githubusercontent.com/93848587/213461905-8ef5e924-599a-4ac1-bf4a-49dbb6bf30a8.jpg){width=20px height=20px}
 
 #**Screen first**
 
